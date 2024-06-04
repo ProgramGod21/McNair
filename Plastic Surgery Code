@@ -1,0 +1,114 @@
+import sys
+
+#Imports added to the program (class) or (function use)
+
+from PyQt6.QtWidgets import *
+#from PyQt6.QtWidgets import QApplication, QWidget, QLabel, QVBoxLayout, QMainWindow, QLineEdit, QCheckBox
+
+
+#Classes added to program
+
+
+class MyApp(QWidget):
+    def __init__(self):
+        super().__init__()
+
+        #Set the title and dimensions of the window
+        self.setWindowTitle('Basic PyQt6 Application')
+
+
+
+        #Create a label 
+        self.label = QLabel('Hello, PyQt6!', self)
+
+
+
+        #How to add 
+        s1 = "The cat" 
+        s2 = "and the hat"
+        s3 = s1 + s2
+        print(s3)
+
+        #Set Layout
+        layout = QGridLayout()
+
+        #--Adding check boxes 
+        #check1 = QCheckBox("Option 1")
+        #check2 = QCheckBox("Option 2")
+        #check3 = QCheckBox("Option 3")
+
+        #initilize the layout or other function
+        self.setLayout(layout)
+
+        #The DOT notation needed to use the check box
+        #layout.addWidget(check1)
+        #layout.addWidget(check2)
+        #layout.addWidget(check3)
+
+        #Using the DOT notation to use the layout 
+        #Left side of the screen
+        
+        self.label1 = QLabel("Patient ID:")
+        layout.addWidget(self.label1, 0, 0)
+
+        self.label2 = QLabel("Trial ID: ")
+        layout.addWidget(self.label2, 1, 0)
+
+          
+        check1 = QCheckBox("Click here to Start Trial")
+        layout.addWidget(check1, 0, 1)
+
+        check2 = QCheckBox("Click to Save Data")
+        layout.addWidget(check2, 1, 1)
+
+         
+        
+        #input1 = QLineEdit()
+       # layout.addWidget(input1, 0, 1)
+
+        #input2 = QLineEdit()
+        #layout.addWidget(check2, 1, 1)
+
+
+
+        self.label3 = QLabel("Save Data: ")
+        layout.addWidget(self.label3, 0, 4)
+
+        self.layout4 = QLabel("Start Trial: ")
+        layout.addWidget(self.label3, 1, 3)
+
+        input3 = QLineEdit()
+        layout.addWidget(input3, 0, 4)
+
+        input4 = QLineEdit()
+        layout.addWidget(input4, 1, 3)
+
+
+        
+
+        
+
+        # Set Layout
+        layout.addWidget(self.label)
+        layout.addWidget(QLabel("",self))
+
+
+        
+
+
+        #This sets the layout for the screen to populate 
+
+        self.setLayout(layout)
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+
+    window = MyApp()
+    window.show()
+
+    sys.exit(app.exec())
+    
+
+
+
+
